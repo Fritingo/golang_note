@@ -8,6 +8,15 @@
 * [6.Slice](#Slice)
 * [7.Map](#Map)
 * [8.New](#New)
+* [9.If Else](#If_Else)
+* [10.Goto](#Goto)
+* [11.For](#For)
+* [12.Switch](#Switch)
+* [13.函數](#函數)
+* [14.可變參數函數](#可變參數函數)
+* [15.指標](#指標)
+* [16.Defer](#Defer)
+
 
 <br>
 
@@ -122,7 +131,9 @@ slice = append(slice, n)
 * **長度不固定**
 ```go
 var nums map[type]type    //map[key]var
-nums := make(map[type]type)
+var nums map[type]type{}
+nums := make(map[type1]type2)
+nums[type1] = type2
 ```
 * **取值用key**
 * **刪除用key**
@@ -138,3 +149,135 @@ delete(nums,key)
 ```go
 nums := new(map[type]type)
 ```
+
+<br>
+
+## If_Else
+```go
+if x > n{
+    //do something
+}else if x > n1{
+    //do something
+}else{
+    //do something
+}
+```
+* **允許聲明變數，只存在於 if**
+```go
+if x := computedValue(); x > n{
+    //do someting
+}
+```
+
+<br>
+
+## Goto
+* **跳轉**
+```go
+Here:
+    goto Here //跳轉至Here
+}
+```
+
+<br>
+
+## For
+```go
+for index := 0; index < n; index++{//類似C
+        //do someting
+}
+```
+* **while**
+```go
+for index < n{
+        //do someting
+}
+```
+* **跳出迴圈**
+```go
+for index := 10; index > n; index--{
+        //do someting
+    break
+}
+```
+* **跳過本次迴圈**
+```go
+for index := 10; index > n; index--{
+        //do someting
+    continue
+}
+```
+* **用range讀map**
+```go
+nums := map[string]int{"one": 1, "two": 2}
+for k, v := range nums {
+	fmt.Println(k)
+	fmt.Println(v)
+}
+```
+
+<br>
+
+## Switch
+```go
+switch sExpr {
+case expr1:
+    //some instructions
+case expr2:
+    //some other instructions
+case expr3:
+    //some other instructions
+default:
+    //other code
+}
+```
+
+<br>
+
+## 函數
+```go
+func funcName(input1 type1,input2 type2)(output1 type1,output2 type2){
+        //do someting
+    return value1, value2
+}
+```
+
+<br>
+
+## 可變參數函數
+```go 
+func toFullname(names ...stirng) string {//可以接收多個或0個參數
+  return strings.Join(names, " ")
+}
+```
+<br>
+
+## 指標
+```go
+func one(xPtr *int){
+    *xPtr = 1
+}
+func main(){
+    x := 5
+    one(&x)        //傳入x指標位置
+    fmt.Println(x) // x is 1
+}
+```
+
+<br>
+
+## Defer
+* **執行的時間點會在離開目前func時**
+```go
+func ReadFile(){
+    file.Open("file")
+    defer file.Close()
+}
+```
+* **後進先出**
+```go
+for i := 0; i < 5; i++ {
+    defer fmt.Printf("%d ", i) //4 3 2 1 0
+}
+```
+
