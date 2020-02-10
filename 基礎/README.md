@@ -1,5 +1,14 @@
 # 基礎
 
+* [1.字符串](## 字符串)
+* [2.錯誤](## 錯誤)
+* [3.常數](## 常數)
+* [4.枚舉](## 枚舉)
+* [5.Array](## Array)
+* [6.Slice](## Slice)
+* [7.Map](## Map)
+* [8.New](## New)
+
 <br>
 
 ## 字符串
@@ -61,7 +70,7 @@ const pi = 3.14
 ```
 <br>
 
-##枚舉
+## 枚舉
 ```go
 const(
     a = iota  //0
@@ -103,4 +112,29 @@ cap(slice)
 * **新增**
 ```go
 slice = append(slice, n)
+```
+
+<br>
+
+## Map
+* **類似Python字典**
+* **無序的**
+* **長度不固定**
+```go
+var nums map[type]type    //map[key]var
+nums := make(map[type]type)
+```
+* **取值用key**
+* **刪除用key**
+```go
+delete(nums,key)
+```
+
+<br>
+
+## New
+* **初始化泛型**
+* **回傳指標(不同於make)**
+```go
+nums := new(map[type]type)
 ```
