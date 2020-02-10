@@ -4,14 +4,16 @@
 
 ## 字符串
 
-**採用UTF-8**
-**多行聲明**
-ˋˋˋ
+* **採用UTF-8**
+* **多行聲明**
+
+ˋˋˋgo
 s := ˋHello
         Worldˋ
 ˋˋˋ
-**不可以直接變換**
-ˋˋˋ
+
+* **不可以直接變換**
+ˋˋˋgo
 s := "Hello"
 c := []byte(s) //字符串變換需先將 string 轉 byte
 c[4] = 'c'
@@ -22,8 +24,8 @@ s1 := string(c) //再轉回 string
 
 ## 錯誤
 
-**一般錯誤**
-ˋˋˋ
+* **一般錯誤**
+ˋˋˋgo
 package main                              
 
 import (                                  
@@ -40,13 +42,13 @@ func main() {             //遇到錯誤不會中止程式
         fmt.Println("More message")       
 }
 ˋˋˋ
-**錯誤介面**
-ˋˋˋ
+* **錯誤介面**
+ˋˋˋgo
 type error interface {
     Error() string
 }
 ˋˋˋ
-**嚴重錯誤**
-ˋˋˋ
+* **嚴重錯誤**
+ˋˋˋgo
 panic(string)//強制中止程式
 ˋˋˋ
