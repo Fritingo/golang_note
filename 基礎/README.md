@@ -7,25 +7,25 @@
 * **採用UTF-8**
 * **多行聲明**
 
-ˋˋˋgo
-s := ˋHello
-        Worldˋ
-ˋˋˋ
+```go
+s := `Hello
+        World`
+```
 
 * **不可以直接變換**
-ˋˋˋgo
+```go
 s := "Hello"
 c := []byte(s) //字符串變換需先將 string 轉 byte
 c[4] = 'c'
 s1 := string(c) //再轉回 string
-ˋˋˋ
+```
 
 <br>
 
 ## 錯誤
 
 * **一般錯誤**
-ˋˋˋgo
+```go
 package main                              
 
 import (                                  
@@ -41,14 +41,66 @@ func main() {             //遇到錯誤不會中止程式
 
         fmt.Println("More message")       
 }
-ˋˋˋ
+```
 * **錯誤介面**
-ˋˋˋgo
+```go
 type error interface {
     Error() string
 }
-ˋˋˋ
+```
 * **嚴重錯誤**
-ˋˋˋgo
+```go
 panic(string)//強制中止程式
-ˋˋˋ
+```
+
+<br>
+
+## 常數
+```go
+const pi = 3.14
+```
+<br>
+
+##枚舉
+```go
+const(
+    a = iota  //0
+    b         //1
+    test = "A"//A
+    c = iota  //3
+    d         //4
+)
+```
+
+<br>
+
+## Array
+* **一維**
+```go
+var arr [n]type
+var arr [n]type{}
+```
+* **多維**
+```go
+var arr [n][n]type
+var arr [n][n]type{{},{}}
+```
+
+<br>
+
+## Slice
+* **動態數組**
+```go
+var slice []type
+slice := []type{}
+slice := make([]type, len, cap)
+```
+* **長度 容量**
+```go
+len(slice)
+cap(slice)
+```
+* **新增**
+```go
+slice = append(slice, n)
+```
