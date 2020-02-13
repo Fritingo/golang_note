@@ -1,21 +1,52 @@
 # 基礎
 
-* [1.字符串](#字符串)
-* [2.錯誤](#錯誤)
-* [3.常數](#常數)
-* [4.枚舉](#枚舉)
-* [5.Array](#Array)
-* [6.Slice](#Slice)
-* [7.Map](#Map)
-* [8.New](#New)
-* [9.If Else](#If_Else)
-* [10.Goto](#Goto)
-* [11.For](#For)
-* [12.Switch](#Switch)
-* [13.函數](#函數)
-* [14.可變參數函數](#可變參數函數)
-* [15.指標](#指標)
-* [16.Defer](#Defer)
+* [.變數](#變數)
+* [.Basic Types](#BasicTypes)
+* [.字符串](#字符串)
+* [.錯誤](#錯誤)
+* [.常數](#常數)
+* [.枚舉](#枚舉)
+* [.Array](#Array)
+* [.Slice](#Slice)
+* [.Map](#Map)
+* [.New](#New)
+* [.If Else](#If_Else)
+* [.Goto](#Goto)
+* [.For](#For)
+* [.Switch](#Switch)
+* [.函數](#函數)
+* [.命名返回值](#命名返回值)
+* [.可變參數函數](#可變參數函數)
+* [.指標](#指標)
+* [.Defer](#Defer)
+
+
+<br>
+
+## 變數
+
+```go
+var a type
+var b, c, d type
+```
+* **短聲明變數**
+```go
+a := 1 //int
+b := "test" //string
+```
+
+<br>
+
+## BasicTypes
+
+* **bool**
+* **string**
+* **int  int8  int16  int32  int64**
+* **uint uint8 uint16 uint32 uint64 uintptr**
+* **byte = uint8**
+* **rune = int32 代表一個Unicode碼**
+* **float32 float64**
+* **complex64 complex128**
 
 
 <br>
@@ -239,6 +270,18 @@ default:
 func funcName(input1 type1,input2 type2)(output1 type1,output2 type2){
         //do someting
     return value1, value2
+}
+```
+
+<br>
+
+## 命名返回值
+
+```go
+func split(sum int) (x, y int) {
+	x = sum * 10 / 7
+	y = sum - x
+	return //回傳 x , y
 }
 ```
 
