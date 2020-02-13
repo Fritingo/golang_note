@@ -3,6 +3,7 @@
 * [.變數](#變數)
 * [.Basic Types](#BasicTypes)
 * [.字符串](#字符串)
+* [.Struct](#Struct)
 * [.錯誤](#錯誤)
 * [.常數](#常數)
 * [.枚舉](#枚舉)
@@ -13,6 +14,7 @@
 * [.If Else](#If_Else)
 * [.Goto](#Goto)
 * [.For](#For)
+* [.無窮迴圈](#無窮迴圈)
 * [.Switch](#Switch)
 * [.函數](#函數)
 * [.命名返回值](#命名返回值)
@@ -71,6 +73,23 @@ s1 := string(c) //再轉回 string
 
 <br>
 
+## Struct 
+
+```go
+type Vertex struct {
+	X int
+	Y int
+}
+
+func main() {
+	v := Vertex{1, 2}
+	v.X = 4
+	fmt.Println(v.X)
+}
+```
+
+<br>
+
 ## 錯誤
 
 * **一般錯誤**
@@ -124,6 +143,7 @@ const(
 <br>
 
 ## Array
+* **陣列不能改變大小**
 * **一維**
 ```go
 var arr [n]type
@@ -153,6 +173,10 @@ cap(slice)
 ```go
 slice = append(slice, n)
 ```
+* **切片**
+```go
+slice[m:n]
+```
 
 <br>
 
@@ -165,6 +189,10 @@ var nums map[type]type    //map[key]var
 var nums map[type]type{}
 nums := make(map[type1]type2)
 nums[type1] = type2
+var m = map[string]int{
+	"Bell Labs": 1,
+	"Google":    2,
+}
 ```
 * **取值用key**
 * **刪除用key**
@@ -246,10 +274,26 @@ for k, v := range nums {
 	fmt.Println(v)
 }
 ```
+* **用range讀slice**
+```go
+for i, v := range slice {
+		fmt.Printf("2**%d = %d\n", i, v)
+	}
+```
+
+<br>
+
+## 無窮迴圈
+```go
+for {
+    //do someting
+	}
+```
 
 <br>
 
 ## Switch
+
 ```go
 switch sExpr {
 case expr1:
@@ -262,6 +306,7 @@ default:
     //other code
 }
 ```
+* **沒有條件的 switch = switch true**
 
 <br>
 
@@ -323,4 +368,5 @@ for i := 0; i < 5; i++ {
     defer fmt.Printf("%d ", i) //4 3 2 1 0
 }
 ```
+[回目錄](#基礎)
 
